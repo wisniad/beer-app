@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { connect } from 'react-redux';
+import { Provider, connect } from 'react-redux';
+import AppRouter, {history} from './routers/AppRouter';
+
 import {getBeers, startGetBeers} from "./actions/beers";
 import configureStore from './store/configureStore';
 
 const store = configureStore();
 
+const App = () => (
+
+    <Provider store={store}>
+        <AppRouter/>
+    </Provider>
+);
 
 let hasRendered = false;
 const renderApp = () => {
