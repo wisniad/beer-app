@@ -3,7 +3,7 @@ const GET_SUCCESS = 'beersApi/GET_SUCCESS'
 const GET_FAIL = 'beersApi/GET_FAIL'
 
 
-export const getBeersApi = (page) => dispatch => {
+export const getBeersApi = (page, ownProps) => dispatch => {
     let newPage =  parseInt(page)+1;
     dispatch({ type: GET_BEGIN });
 
@@ -12,7 +12,7 @@ export const getBeersApi = (page) => dispatch => {
     ).then(
         response => response.json()
     ).then(
-        data => dispatch({ type: GET_SUCCESS, data, newPage })
+        data => dispatch({ type: GET_SUCCESS, data, newPage, ownProps })
     ).catch(
         error => dispatch({ type: GET_FAIL, error })
     )
@@ -38,7 +38,7 @@ export default (state = initialState, action = {}) => {
         case GET_SUCCESS:
             return {
                 ...state,
-                data: action.data,
+                data: action.ownProps.concat(action.data),
                 getting: false,
                 page: action.newPage
             }

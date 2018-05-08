@@ -3,21 +3,28 @@ import { connect } from 'react-redux'
 import  { getBeersApi }from '../actions/beersApi'
 
 class ListingView extends React.Component {
-    state = {
-        beers: [],
-        getting: false,
-        page: 1
+    constructor(props) {
+        super(props);
+        this.state = {
+            beers: [],
+            getting: false,
+            page: 1
+        }
     }
+
 
     componentDidMount() {
         this.props.getBeersApi(this.state.page)
-        console.log(this.state.page)
+        console.log(this.state.page);
+        console.log(this.state)
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
         console.log("Strona: "+this.props.beers.page)
-        this.props.getBeersApi(this.props.beers.page)
+        console.log('this state', this.state)
+
+        this.props.getBeersApi(this.props.beers.page,this.props.beers.data)
     }
 
 
@@ -62,13 +69,13 @@ class ListingView extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
     beers: state.beers,
     page: state.page
 });
 
 const mapDispatchToProps = dispatch => ({
-    getBeersApi: (page) => dispatch(getBeersApi(page))
+    getBeersApi: (page, ownProps) => dispatch(getBeersApi(page, ownProps))
 });
 
 export default connect(

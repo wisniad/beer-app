@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d8d12e4-e7c6-4ef7-a084-422bcbfb38f0" name="Default" comment="- Small fix beer state">
+    <list default="true" id="6d8d12e4-e7c6-4ef7-a084-422bcbfb38f0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/beers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/beers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/beersApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/beersApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ListingView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListingView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/beers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/beers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/AppRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/configureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/configureStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ListingView.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ListingView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ListingView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="40" column="20" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+            <state relative-caret-position="587">
+              <caret line="80" column="23" lean-forward="true" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -36,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="beersApi.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="beersApi.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/actions/beersApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+            <state relative-caret-position="570">
+              <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -63,6 +57,7 @@
     <findStrings>
       <find>startGetBeers</find>
       <find>event</find>
+      <find>newPage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -79,8 +74,8 @@
         <option value="$PROJECT_DIR$/src/reducers/beers.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/store/configureStore.js" />
-        <option value="$PROJECT_DIR$/src/actions/beersApi.js" />
         <option value="$PROJECT_DIR$/src/components/ListingView.js" />
+        <option value="$PROJECT_DIR$/src/actions/beersApi.js" />
       </list>
     </option>
   </component>
@@ -189,12 +184,27 @@
       <workItem from="1524480686698" duration="3376000" />
       <workItem from="1524572438925" duration="1559000" />
       <workItem from="1525716696170" duration="312000" />
-      <workItem from="1525717922505" duration="5926000" />
+      <workItem from="1525717922505" duration="6783000" />
     </task>
+    <task id="LOCAL-00001" summary="- Get beers from API and save page from which beers are received">
+      <created>1525767794813</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1525767794813</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- Add file with fetch function">
+      <created>1525767842529</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1525767842529</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15212000" />
+    <option name="totallyTimeSpent" value="16069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="24" width="1242" height="1056" extended-state="4" />
@@ -225,6 +235,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Get beers from API and save page from which beers are received" />
+    <MESSAGE value="- Add file with fetch function" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Add file with fetch function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -622,20 +637,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/beersApi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ListingView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="40" column="20" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+        <state relative-caret-position="587">
+          <caret line="80" column="23" lean-forward="true" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/beersApi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
         </state>
       </provider>
     </entry>
