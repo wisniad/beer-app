@@ -14,7 +14,7 @@ export default () => {
         }),
         composeEnhancers(
             applyMiddleware(thunk),
-            persistState([]/* config*/)
+            // persistState([]/* config*/)
         )
     );
     return store;

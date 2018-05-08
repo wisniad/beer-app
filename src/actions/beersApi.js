@@ -39,13 +39,12 @@ export const getBeersApi = (page, ownProps) => dispatch => {
 
 export const getDetailsApi = (beerId) => dispatch => {
     dispatch({ type: GETDETAILS_BEGIN });
-
     fetch(
         `https://api.punkapi.com/v2/beers/${beerId}`
     ).then(
         response => response.json()
     ).then(
-        details => dispatch({ type: GETDETAILS_SUCCESS, details})
+        beer => dispatch({ type: GETDETAILS_SUCCESS, beer})
     ).catch(
         error => dispatch({ type: GETDETAILS_FAIL, error })
     )
@@ -56,7 +55,7 @@ const initialState = {
     page: 1,
     getting: false,
     error: null,
-    details: null
+    beer: null
 }
 
 export default (state = initialState, action = {}) => {
@@ -98,7 +97,7 @@ export default (state = initialState, action = {}) => {
             return {
                 ...state,
                 getting: false,
-                details: action.details
+                beer: action.beer
             }
         case GETDETAILS_FAIL:
             return {

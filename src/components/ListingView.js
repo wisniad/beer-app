@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import  { getBeersApi, getDetailsApi }from '../actions/beersApi'
+import {Link} from 'react-router-dom';
 
 class ListingView extends React.Component {
     state = {
@@ -43,13 +44,15 @@ class ListingView extends React.Component {
                             ? this.props.beers.data.slice(0, this.state.page*20)
                                 : []).map(
                             beer=> (
-                                <li
-                                    key={beer.id}
-                                >
-                                    {beer.name}
+                                <Link  to={"/beer/"+beer.id}>
+                                    <li
+                                        key={beer.id}
+                                    >
+                                        {beer.name}
 
 
-                                </li>
+                                    </li>
+                                </Link>
                             )
                         )
                     }

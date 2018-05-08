@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-// import DetailedView from '../components/DetailedView';
+import DetailedView from '../components/DetailedView';
 import ListingView from '../components/ListingView';
 import NotFoundPage from '../components/NotFoundPage';
 
@@ -13,7 +13,7 @@ const AppRouter = () => (
         <div>
             <Switch>
                 <Route path="/" component={ListingView} exact={true} />
-                {/*<Route path="/beer/:id" component={DetailedView} />*/}
+                <Route path="/beer/:id" component={DetailedView} />
                 <Route component={NotFoundPage} />
             </Switch>
         </div>
