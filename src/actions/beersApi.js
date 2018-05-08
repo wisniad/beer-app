@@ -2,6 +2,10 @@ const GET_BEGIN = 'beersApi/GET_BEGIN'
 const GET_SUCCESS = 'beersApi/GET_SUCCESS'
 const GET_FAIL = 'beersApi/GET_FAIL'
 
+const GETDETAILS_BEGIN = 'beersApi/GETDETAILS_BEGIN'
+const GETDETAILS_SUCCESS = 'beersApi/GETDETAILS_SUCCESS'
+const GETDETAILS_FAIL = 'beersApi/GETDETAILS_FAIL'
+
 
 export const getBeersApi = (page, ownProps) => dispatch => {
     let newPage =  parseInt(page)+1;
@@ -19,12 +23,26 @@ export const getBeersApi = (page, ownProps) => dispatch => {
 }
 
 
+export const getDetailsApi = (beerId) => dispatch => {
+    dispatch({ type: GETDETAILS_BEGIN });
+
+    fetch(
+        `https://api.punkapi.com/v2/beers/${beerId}`
+    ).then(
+        response => response.json()
+    ).then(
+        details => dispatch({ type: GETDETAILS_SUCCESS, details})
+    ).catch(
+        error => dispatch({ type: GETDETAILS_FAIL, error })
+    )
+}
 
 const initialState = {
     data: null,
     page: 1,
     getting: false,
-    error: null
+    error: null,
+    details: null
 }
 
 export default (state = initialState, action = {}) => {
@@ -43,6 +61,24 @@ export default (state = initialState, action = {}) => {
                 page: action.newPage
             }
         case GET_FAIL:
+            return {
+                ...state,
+                getting: false,
+                error: action.error
+            }
+        case GETDETAILS_BEGIN:
+            return {
+                ...state,
+                getting: true,
+                error: null
+            }
+        case GETDETAILS_SUCCESS:
+            return {
+                ...state,
+                getting: false,
+                details: action.details
+            }
+        case GETDETAILS_FAIL:
             return {
                 ...state,
                 getting: false,

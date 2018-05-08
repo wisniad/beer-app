@@ -1,16 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import  { getBeersApi }from '../actions/beersApi'
+import  { getBeersApi, getDetailsApi }from '../actions/beersApi'
 
 class ListingView extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+    state = {
             beers: [],
             getting: false,
             page: 1
-        }
-    }
+        };
+
 
 
     componentDidMount() {
@@ -24,7 +22,12 @@ class ListingView extends React.Component {
         console.log("Strona: "+this.props.beers.page)
         console.log('this state', this.state)
 
-        this.props.getBeersApi(this.props.beers.page,this.props.beers.data)
+        this.setState( { page: this.state.page+1});
+        this.props.getBeersApi(this.props.beers.page,this.props.beers.data);
+
+        //single beer
+        // this.props.getDetailsApi(2);
+        // console.log('Single beer id 2', this.props.beers.details);
     }
 
 
@@ -47,7 +50,7 @@ class ListingView extends React.Component {
                 { <p>This is amount of page in props {this.props.beers.page}</p>}
                 <ul>
                     {
-                        (this.props.beers.data || []).map(
+                        (this.props.beers.data.slice(0, this.state.page*20) || []).map(
                             beer=> (
                                 <li
                                     key={beer.id}
@@ -71,11 +74,13 @@ class ListingView extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     beers: state.beers,
-    page: state.page
+    page: state.page,
+    details: state.details
 });
 
 const mapDispatchToProps = dispatch => ({
-    getBeersApi: (page, ownProps) => dispatch(getBeersApi(page, ownProps))
+    getBeersApi: (page, ownProps) => dispatch(getBeersApi(page, ownProps)),
+    getDetailsApi: (beerId) => dispatch(getDetailsApi(beerId))
 });
 
 export default connect(
