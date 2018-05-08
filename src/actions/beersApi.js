@@ -1,4 +1,5 @@
 const GET_BEGIN = 'beersApi/GET_BEGIN'
+const GET_FIRST_SUCCESS = 'beersApi/GET_FIRST_SUCCESS'
 const GET_SUCCESS = 'beersApi/GET_SUCCESS'
 const GET_FAIL = 'beersApi/GET_FAIL'
 
@@ -10,17 +11,30 @@ const GETDETAILS_FAIL = 'beersApi/GETDETAILS_FAIL'
 export const getBeersApi = (page, ownProps) => dispatch => {
     let newPage =  parseInt(page)+1;
     dispatch({ type: GET_BEGIN });
+    if(page===1) {
+        fetch(
+            `https://api.punkapi.com/v2/beers?page=${page}&per_page=20`
+        ).then(
+            response => response.json()
+        ).then(
+            data => dispatch({ type: GET_FIRST_SUCCESS, data, newPage})
+        ).catch(
+            error => dispatch({ type: GET_FAIL, error })
+        )
+    }
+    else{
+        fetch(
+            `https://api.punkapi.com/v2/beers?page=${page}&per_page=20`
+        ).then(
+            response => response.json()
+        ).then(
+            data => dispatch({ type: GET_SUCCESS, data, newPage, ownProps })
+        ).catch(
+            error => dispatch({ type: GET_FAIL, error })
+        )
+    }
 
-    fetch(
-        `https://api.punkapi.com/v2/beers?page=${page}&per_page=20`
-    ).then(
-        response => response.json()
-    ).then(
-        data => dispatch({ type: GET_SUCCESS, data, newPage, ownProps })
-    ).catch(
-        error => dispatch({ type: GET_FAIL, error })
-    )
-}
+};
 
 
 export const getDetailsApi = (beerId) => dispatch => {
@@ -53,6 +67,13 @@ export default (state = initialState, action = {}) => {
                 getting: true,
                 error: null
             }
+        case GET_FIRST_SUCCESS:
+            return {
+                ...state,
+                data: action.data,
+                getting: false,
+                page: action.newPage
+            }
         case GET_SUCCESS:
             return {
                 ...state,
@@ -60,6 +81,7 @@ export default (state = initialState, action = {}) => {
                 getting: false,
                 page: action.newPage
             }
+
         case GET_FAIL:
             return {
                 ...state,

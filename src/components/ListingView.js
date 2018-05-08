@@ -36,21 +36,12 @@ class ListingView extends React.Component {
         return (
             <div>
                 <h1>Beers</h1>
-
-
-
-
-                {
-                    this.state.error && <p>{this.state.error.message}</p>
-                }
-
-                {
-                    this.props.beers.getting && <p>Getting friends...</p>
-                }
                 { <p>This is amount of page in props {this.props.beers.page}</p>}
                 <ul>
                     {
-                        (this.props.beers.data.slice(0, this.state.page*20) || []).map(
+                        (this.props.beers.data !== null
+                            ? this.props.beers.data.slice(0, this.state.page*20)
+                                : []).map(
                             beer=> (
                                 <li
                                     key={beer.id}
@@ -66,6 +57,13 @@ class ListingView extends React.Component {
                 <button onClick={ this.handleSubmit } type="submit">
                     Load more
                 </button>
+                {
+                    this.state.error && <p>{this.state.error.message}</p>
+                }
+
+                {
+                    this.props.beers.getting && <p>Getting beers...</p>
+                }
 
             </div>
         )
