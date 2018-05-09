@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import  { getBeersApi, getDetailsApi }from '../actions/beersApi'
+import  { getBeersApi }from '../actions/beersApi'
 import {Link} from 'react-router-dom';
+import { HashLoader } from 'react-spinners';
 
 class ListingView extends React.Component {
     state = {
@@ -62,7 +63,11 @@ class ListingView extends React.Component {
                 }
 
                 {
-                    this.props.beers.getting && <p>Getting beers...</p>
+                    this.props.beers.getting && <div>
+                        <p>Grabbing beers...</p>
+                        <HashLoader
+                            color={'FF2F2F'}
+                        /></div>
                 }
 
             </div>
@@ -72,13 +77,11 @@ class ListingView extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     beers: state.beers,
-    page: state.page,
-    details: state.details
+    page: state.page
 });
 
 const mapDispatchToProps = dispatch => ({
-    getBeersApi: (page, ownProps) => dispatch(getBeersApi(page, ownProps)),
-    getDetailsApi: (beerId) => dispatch(getDetailsApi(beerId))
+    getBeersApi: (page, ownProps) => dispatch(getBeersApi(page, ownProps))
 });
 
 export default connect(

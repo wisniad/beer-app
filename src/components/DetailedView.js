@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import  { getBeersApi, getDetailsApi }from '../actions/beersApi'
 import {history} from '../routers/AppRouter';
 import Modal from 'react-modal';
+import { HashLoader } from 'react-spinners';
 
 
 class ListingView extends React.Component {
@@ -53,8 +54,16 @@ class ListingView extends React.Component {
                                 ? <div>
                                         <h1>{this.props.match.params.beerName}</h1>
                                         <p>Grabbing information...</p>
+                                        <HashLoader
+                                            color={'FF2F2F'}
+                                        />
                                   </div>
-                                : <p>Grabbing a beer...</p>
+                                : <div>
+                                    <p>Grabbing a beer...</p>
+                                    <HashLoader
+                                        color={'FF2F2F'}
+                                    />
+                                </div>
                     }
 
                 </Modal>
