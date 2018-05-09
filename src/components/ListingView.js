@@ -8,16 +8,23 @@ import InfiniteScroll from 'react-infinite-scroller'
 class ListingView extends React.Component {
 
     state = {
-            beers: [],
-            getting: false,
-            page: 1,
-            hasMoreItems: false,
-            nextHref: null
+        beers: [],
+        getting: false,
+        page: 1,
+        hasMoreItems: false
     };
 
     divStyle = {
         height: '150px',
-        width: '200px'
+        width: '200px',
+        backgroundColor: '#E0EDFF',
+        border: 'dashed'
+    };
+    divStyle2 = {
+        // height: '150px',
+        // width: '200px',
+        backgroundColor: '#f6ffbd',
+        border: 'dotted'
     };
 
     componentDidMount() {
@@ -25,7 +32,7 @@ class ListingView extends React.Component {
     }
 
     loadMore = () => {
-        if(parseInt(this.props.beers.page) < 13) {
+        if (parseInt(this.props.beers.page) < 13) {
             this.setState({page: this.state.page + 1});
             this.props.getBeersApi(this.props.beers.page, this.props.beers.data);
         }
@@ -39,13 +46,18 @@ class ListingView extends React.Component {
     render() {
         let items = [];
         (this.props.beers.data || []).map(
-            (beer, i)=> items.push(
+            (beer, i) => items.push(
                 <Link key={i} to={"/beer/" + beer.id + "/" + beer.name}>
-                    <li key={beer.id}
-                        style={this.divStyle}
-                    >
-                        ID: {beer.id}. {beer.name}
-                    </li>
+
+                    <div style={this.divStyle2}>
+                        <div>
+                            <img src={beer.image_url} width="40" height="150"/>
+                        </div>
+                        <div  style={this.divStyle}>
+                            <h2>{beer.name}</h2>
+                            <p>{beer.tagline}</p>
+                        </div>
+                    </div>
                 </Link>
             )
         );
@@ -63,9 +75,8 @@ class ListingView extends React.Component {
                     }
                     loadMore={this.loadMore}
                 >
-                    <ul>
-                        {items}
-                    </ul>
+                    {items}
+
                 </InfiniteScroll>
 
                 {
