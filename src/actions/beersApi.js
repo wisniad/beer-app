@@ -44,7 +44,7 @@ export const getDetailsApi = (beerId) => dispatch => {
     ).then(
         response => response.json()
     ).then(
-        beer => dispatch({ type: GETDETAILS_SUCCESS, beer})
+        beer => dispatch({ type: GETDETAILS_SUCCESS, beer })
     ).catch(
         error => dispatch({ type: GETDETAILS_FAIL, error })
     )
@@ -97,13 +97,14 @@ export default (state = initialState, action = {}) => {
             return {
                 ...state,
                 getting: false,
-                beer: action.beer
+                beer: action.beer,
+                beerExists: action.beer.length
             }
         case GETDETAILS_FAIL:
             return {
                 ...state,
                 getting: false,
-                error: action.error
+                error: true
             }
         default:
             return state

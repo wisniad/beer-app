@@ -6,7 +6,8 @@ import {Link} from 'react-router-dom';
 class ListingView extends React.Component {
     state = {
         getting: false,
-        beer: null
+        beer: null,
+        beerExists: false
     };
 
 
@@ -16,13 +17,26 @@ class ListingView extends React.Component {
         // console.log(this.state.page);
         console.log(this.props);
         this.props.getDetailsApi(this.props.match.params.id);
+        // this.setState( {error : this.props.beers.beer.length} )
+            // ? this.setState( { beerExists: true } )
+            // : this.setState( { beerExists: false } )
+
+
+
+
+        // console.log(this.props.beers.beer.hasOwnProperty('statusCode')
+
+        // if(this.props.beers.beer.hasOwnProperty('name')){
+        //     alert("yes, i have that property");
+        // }
+            // ? this.setState( { beerExists: true } )
+            // : this.setState( { beerExists: false } )
+
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-
-        console.log('Single beer id 2', this.props.beers.beer[0].name);
-    }
+        }
 
 
 
@@ -30,18 +44,23 @@ class ListingView extends React.Component {
         return (
             <div>
                 <Link to="/">Go home</Link>
-                {
-                    this.state.error && <p>{this.state.error.message}</p>
-                }
+                {/*{*/}
+                    {/*// this.props.beers.beer.error && <p>{this.props.beers.beer.error.message}</p>*/}
+                   {/*/!*<p>{hasOwnProperty(this.props.beers.beer,'statusCode')}</p>*!/*/}
+                {/*}*/}
+
+
 
                 {
-                    this.props.beers.beer !== null && !this.props.beers.getting ?
-                        <div>
+                    !this.props.beers.getting  ?
+                        this.props.beers.beer !== null && this.props.beers.beerExists?
+                            <div>
                                 <h1 key={this.props.beers.beer[0].id}>{this.props.beers.beer[0].name}</h1>
-
-                        </div>
+                            </div>
+                            :
+                            <p>Beer with id: {this.props.match.params.id} doesn't exists.</p>
                         :
-                        <p>Grabbing a beer...</p>
+                            <p>Grabbing a beer...</p>
                 }
 
 
@@ -54,7 +73,8 @@ class ListingView extends React.Component {
 const mapStateToProps = (state, ownProps) => ({
     beers: state.beers,
     page: state.page,
-    details: state.details
+    details: state.details,
+    beerExists: state.beerExists
 });
 
 const mapDispatchToProps = dispatch => ({
