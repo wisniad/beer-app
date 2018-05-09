@@ -26,9 +26,6 @@ class ListingView extends React.Component {
         this.setState( { page: this.state.page+1});
         this.props.getBeersApi(this.props.beers.page,this.props.beers.data);
 
-        //single beer
-        // this.props.getDetailsApi(2);
-        // console.log('Single beer id 2', this.props.beers.details);
     }
 
 
@@ -44,7 +41,7 @@ class ListingView extends React.Component {
                             ? this.props.beers.data.slice(0, this.state.page*20)
                                 : []).map(
                             beer=> (
-                                <Link  to={"/beer/"+beer.id}>
+                                <Link  to={"/beer/"+beer.id+"/"+beer.name}>
                                     <li
                                         key={beer.id}
                                     >
