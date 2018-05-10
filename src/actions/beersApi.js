@@ -1,6 +1,7 @@
 const GET_BEGIN = 'beersApi/GET_BEGIN'
 const GET_FIRST_SUCCESS = 'beersApi/GET_FIRST_SUCCESS'
 const GET_SUCCESS = 'beersApi/GET_SUCCESS'
+const GET_SUCCESS_NO_MORE_ITEMS = 'beersApi/GET_SUCCESS_NO_MORE_ITEMS'
 const GET_FAIL = 'beersApi/GET_FAIL'
 
 const GET_DETAILS_BEGIN = 'beersApi/GET_DETAILS_BEGIN'
@@ -32,7 +33,14 @@ export const getBeersApi = (page, ownProps) => dispatch => {
         ).then(
             response => response.json()
         ).then(
-            data => dispatch({type: GET_SUCCESS, data, newPage, ownProps})
+            data => {
+                if(data.length > 0 ) {
+                    dispatch({type: GET_SUCCESS, data, newPage, ownProps})
+                }
+                else{
+                    dispatch({type: GET_SUCCESS_NO_MORE_ITEMS, data, newPage, ownProps})
+                }
+            }
         ).catch(
             error => dispatch({type: GET_FAIL, error})
         )
@@ -125,7 +133,8 @@ const initialState = {
     error: null,
     beer: null,
     gettingSimilars: false,
-    similar: null
+    similar: null,
+    hasMoreItems:true
 };
 
 export default (state = initialState, action = {}) => {
@@ -150,12 +159,19 @@ export default (state = initialState, action = {}) => {
                 getting: false,
                 page: action.newPage
             }
-
+        case GET_SUCCESS_NO_MORE_ITEMS:
+            return {
+                ...state,
+                data: action.ownProps.concat(action.data),
+                getting: false,
+                page: action.newPage,
+                hasMoreItems: false
+            }
         case GET_FAIL:
             return {
                 ...state,
                 getting: false,
-                error: action.error
+                error: true
             }
         case GET_DETAILS_BEGIN:
             return {

@@ -66,8 +66,9 @@ class ListingView extends React.Component {
                                 />
                             </div>
                             :
-                            <p>Beer with id: {this.props.match.params.id} doesn't exists you limit for requests is
-                                reached.</p>
+                            this.props.beers.error ?
+                                <p>Check your internet connection</p>
+                                : <p>Beer with id: {this.props.match.params.id} doesn't exists you limit for requests is reached.</p>
                         :
                         this.props.match.params.beerName
                             ? <div>

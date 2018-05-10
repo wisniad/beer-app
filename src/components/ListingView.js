@@ -11,7 +11,6 @@ class ListingView extends React.Component {
         beers: [],
         getting: false,
         page: 1,
-        hasMoreItems: false
     };
 
     divStyle = {
@@ -32,14 +31,9 @@ class ListingView extends React.Component {
     }
 
     loadMore = () => {
-        if (parseInt(this.props.beers.page, 10) < 13) {
+        if (this.props.beers.hasMoreItems) {
             this.setState({page: this.state.page + 1});
             this.props.getBeersApi(this.props.beers.page, this.props.beers.data);
-        }
-        else {
-            this.setState({
-                hasMoreItems: false
-            });
         }
     };
 
@@ -47,18 +41,13 @@ class ListingView extends React.Component {
         let items = [];
         (this.props.beers.data || []).map(
             (beer, i) => items.push(
-                <Link key={i} to={"/beer/" + beer.id + "/" + beer.name}>
-
-                    <div style={this.divStyle2}>
-                        <div>
+                <div key={i} style={this.divStyle2}>
+                    <Link to={"/beer/" + beer.id + "/" + beer.name}>
                             <img src={beer.image_url} width="40" height="150" alt=""/>
-                        </div>
-                        <div style={this.divStyle}>
                             <h2>{beer.name}</h2>
                             <p>{beer.tagline}</p>
-                        </div>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             )
         );
 
@@ -71,7 +60,7 @@ class ListingView extends React.Component {
                     hasMore={
                         this.props.beers.data !== null &&
                         !this.props.beers.getting &&
-                        this.props.beers.page < 13
+                        this.props.beers.hasMoreItems
                     }
                     loadMore={this.loadMore}
                 >
@@ -80,7 +69,7 @@ class ListingView extends React.Component {
                 </InfiniteScroll>
 
                 {
-                    this.state.error && <p>{this.state.error.message}</p>
+                    this.props.beers.error && <p>Check your internet.</p>
                 }
 
                 {
@@ -92,8 +81,8 @@ class ListingView extends React.Component {
                 }
 
                 {
-                    this.props.beers.page === 13 &&
-                    <p>That was it. No more beers to load.</p>
+                    this.props.beers.hasMoreItems === false &&
+                    <p>That was it. No more beers to show.</p>
                 }
 
             </div>
@@ -103,7 +92,8 @@ class ListingView extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
     beers: state.beers,
-    page: state.page
+    page: state.page,
+    hasMoreItems: state.hasMoreItems
 });
 
 const mapDispatchToProps = dispatch => ({
