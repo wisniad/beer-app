@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {getBeersApi} from '../actions/beersApi'
 import {Link} from 'react-router-dom';
 import {HashLoader} from 'react-spinners';
-import InfiniteScroll from 'react-infinite-scroller'
+import InfiniteScroll from 'react-infinite-scroller';
 
 class ListingView extends React.Component {
 
@@ -32,7 +32,7 @@ class ListingView extends React.Component {
     }
 
     loadMore = () => {
-        if (parseInt(this.props.beers.page) < 13) {
+        if (parseInt(this.props.beers.page, 10) < 13) {
             this.setState({page: this.state.page + 1});
             this.props.getBeersApi(this.props.beers.page, this.props.beers.data);
         }
@@ -51,9 +51,9 @@ class ListingView extends React.Component {
 
                     <div style={this.divStyle2}>
                         <div>
-                            <img src={beer.image_url} width="40" height="150"/>
+                            <img src={beer.image_url} width="40" height="150" alt=""/>
                         </div>
-                        <div  style={this.divStyle}>
+                        <div style={this.divStyle}>
                             <h2>{beer.name}</h2>
                             <p>{beer.tagline}</p>
                         </div>

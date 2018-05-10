@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import createHistory from 'history/createBrowserHistory';
 import DetailedView from '../components/DetailedView';

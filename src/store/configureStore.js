@@ -1,7 +1,7 @@
 import {combineReducers, createStore, applyMiddleware, compose} from "redux";
 import thunk from 'redux-thunk';
-import persistState from 'redux-localstorage'
-import beersReducer from '../reducers/beers';
+// import persistState from 'redux-localstorage'
+// import beersReducer from '../reducers/beers';
 
 import beers from '../actions/beersApi';
 
