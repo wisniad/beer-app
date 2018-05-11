@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 import {HashLoader} from 'react-spinners';
 import SimilarBeers from './SimilarBeers';
 
-class ListingView extends React.Component {
+class DetailedView extends React.Component {
     constructor() {
         super();
 
@@ -16,14 +16,12 @@ class ListingView extends React.Component {
             beer: null,
             beerExists: false
         };
-
         this.closeModal = this.closeModal.bind(this);
     }
 
     closeModal() {
         this.setState({modalIsOpen: false});
         history.push('/');
-
     }
 
     componentDidMount() {
@@ -104,4 +102,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ListingView)
+)(DetailedView)

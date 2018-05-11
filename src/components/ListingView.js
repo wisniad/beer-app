@@ -13,19 +13,6 @@ class ListingView extends React.Component {
         page: 1,
     };
 
-    divStyle = {
-        height: '150px',
-        width: '200px',
-        backgroundColor: '#E0EDFF',
-        border: 'dashed'
-    };
-    divStyle2 = {
-        // height: '150px',
-        // width: '200px',
-        backgroundColor: '#f6ffbd',
-        border: 'dotted'
-    };
-
     componentDidMount() {
         this.props.getBeersApi(this.state.page)
     }
@@ -41,11 +28,11 @@ class ListingView extends React.Component {
         let items = [];
         (this.props.beers.data || []).map(
             (beer, i) => items.push(
-                <div key={i} style={this.divStyle2}>
+                <div key={i}>
                     <Link to={"/beer/" + beer.id + "/" + beer.name}>
-                            <img src={beer.image_url} width="40" height="150" alt=""/>
-                            <h2>{beer.name}</h2>
-                            <p>{beer.tagline}</p>
+                        <img src={beer.image_url} width="40" height="150" alt=""/>
+                        <h2>{beer.name}</h2>
+                        <p>{beer.tagline}</p>
                     </Link>
                 </div>
             )
@@ -65,7 +52,6 @@ class ListingView extends React.Component {
                     loadMore={this.loadMore}
                 >
                     {items}
-
                 </InfiniteScroll>
 
                 {
@@ -84,7 +70,6 @@ class ListingView extends React.Component {
                     this.props.beers.hasMoreItems === false &&
                     <p>That was it. No more beers to show.</p>
                 }
-
             </div>
         )
     }
