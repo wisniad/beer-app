@@ -4,6 +4,7 @@ import {getBeersApi} from '../actions/beersApi'
 import {Link} from 'react-router-dom';
 import {HashLoader} from 'react-spinners';
 import InfiniteScroll from 'react-infinite-scroller';
+import {Header} from './Header';
 
 class ListingView extends React.Component {
 
@@ -40,7 +41,7 @@ class ListingView extends React.Component {
 
         return (
             <div>
-                <h1>Beers</h1>
+                <Header/>
 
                 <InfiniteScroll
                     pageStart={0}

@@ -66,7 +66,7 @@ class DetailedView extends React.Component {
                             :
                             this.props.beers.error ?
                                 <p>Check your internet connection</p>
-                                : <p>Beer with id: {this.props.match.params.id} doesn't exists you limit for requests is reached.</p>
+                                : <p>Couldn't grab a beer with ID: {this.props.match.params.id}.</p>
                         :
                         this.props.match.params.beerName
                             ? <div>
