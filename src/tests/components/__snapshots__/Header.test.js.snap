@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<header>
+  <h1>
+    Beer list
+  </h1>
+  <h2>
+    Find what you like
+  </h2>
+</header>
+`;

@@ -1,0 +1,81 @@
+html {
+  font-size: 85%; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #f1f1f1; }
+
+h1 {
+  font-size: 3rem;
+  font-family: 'Luckiest Guy', cursive;
+  text-transform: uppercase; }
+
+h2 {
+  font-size: 2rem;
+  font-family: 'Luckiest Guy', sans-serif;
+  letter-spacing: 1px; }
+
+.header {
+  background-color: #ff0000;
+  -webkit-box-shadow: 0px 3px 1px #b20000;
+  -moz-box-shadow: 0px 3px 1px #b20000;
+  box-shadow: 0px 3px 1px #b20000; }
+
+.header__tittle {
+  color: #FFE699; }
+
+.header__subtitle {
+  color: #ddc884; }
+
+.listingView {
+  background-color: white;
+  border: #ddc884 1px solid;
+  margin: 20px; }
+
+.listingView {
+  transition: all .2s ease-in-out; }
+
+.listingView:hover {
+  transform: scale(1.2); }
+
+.listingView a:visited, a:link {
+  color: #9B3200; }
+
+.listingView__beer_name {
+  text-align: center; }
+
+.listingView__beerTagline {
+  text-align: center;
+  color: #D77200; }
+
+/* entire container, keeps perspective */
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg); }
+
+.flip-container, .front, .back {
+  width: 220px;
+  height: 220px; }
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative; }
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg); }
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg); }

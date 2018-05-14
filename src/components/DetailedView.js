@@ -6,6 +6,17 @@ import Modal from 'react-modal';
 import {HashLoader} from 'react-spinners';
 import SimilarBeers from './SimilarBeers';
 
+const customStyles = {
+    content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+    }
+};
+
 class DetailedView extends React.Component {
     constructor() {
         super();
@@ -41,6 +52,7 @@ class DetailedView extends React.Component {
                 onRequestClose={this.closeModal}
                 contentLabel="Beer modal"
                 ariaHideApp={false}
+                style={customStyles}
             >
                 <button onClick={this.closeModal}>close</button>
                 {
