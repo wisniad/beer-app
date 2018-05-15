@@ -7,30 +7,6 @@ import {HashLoader} from 'react-spinners';
 import SimilarBeers from './SimilarBeers';
 import {Flex, Box} from 'reflexbox'
 
-// const customStyles = {
-//     content: {
-//         top: '50%',
-//         left: '50%',
-//         right: '10%',
-//         bottom: '0%',
-//         marginRight: '-50%',
-//         transform: 'translate(-50%, -50%)'
-//     }
-// };
-
-const style = {
-    content: {
-        bottom: 'auto',
-        left: '50%',
-        position: 'fixed',
-        right: 'auto',
-        top: '50%',
-        transform: 'translate(-50%,-50%)',
-        overlfow: 'scroll' // <-- This tells the modal to scrol
-
-    }
-};
-
 class DetailedView extends React.Component {
     constructor() {
         super();
@@ -79,27 +55,32 @@ class DetailedView extends React.Component {
 
 
                                         <Box w={1 / 3} p={0}>
-                                            <img src={this.props.beers.beer[0].image_url}
-                                                 className="detailedview__image" alt=""/>
+                                            <div align="center">
+                                                <img src={this.props.beers.beer[0].image_url} className="detailedview__image similarView__border" alt=""/>
+                                            </div>
                                         </Box>
                                         <Box w={2 / 3} p={0}>
+                                            <p className="detailedview__text"><strong>About this beer:</strong></p>
                                             <p className="detailedview__text">{this.props.beers.beer[0].description}</p>
                                         </Box>
                                         <Box w={1 / 3} p={0}>
-                                            <p className="detailedview__text">
-                                                <strong>IBU:</strong> {this.props.beers.beer[0].ibu}</p>
-                                            <p className="detailedview__text">
-                                                <strong> EBC:</strong> {this.props.beers.beer[0].ebc}</p>
-                                            <p className="detailedview__text">
-                                                <strong> ABV:</strong> {this.props.beers.beer[0].abv}%</p>
+                                            <div align="center">
+                                                <p className="detailedview__text">
+                                                    <strong>IBU:</strong> {this.props.beers.beer[0].ibu}</p>
+                                                <p className="detailedview__text">
+                                                    <strong> EBC:</strong> {this.props.beers.beer[0].ebc}</p>
+                                                <p className="detailedview__text">
+                                                    <strong> ABV:</strong> {this.props.beers.beer[0].abv}%</p>
+                                            </div>
                                         </Box>
                                         <Box w={2 / 3} p={0}>
+                                            <p className="detailedview__text"><strong>Brewers tips:</strong></p>
                                             <p className="detailedview__text">{this.props.beers.beer[0].brewers_tips}</p>
                                         </Box>
 
 
                                         <Box w={1} p={0}>
-                                            <p className="detailedview__text">You may also like:</p>
+                                            <p className="detailedview__text"><strong>You may also like:</strong></p>
                                             <SimilarBeers
                                                 similarIbu={this.props.beers.beer[0].ibu}
                                                 similarEbc={this.props.beers.beer[0].ebc}

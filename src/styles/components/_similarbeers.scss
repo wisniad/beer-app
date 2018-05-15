@@ -1,2 +1,14 @@
-.similarView { transition: all .2s ease-in-out; }
-.similarView:hover { transform: scale(1.1);}
+.similarView {
+  transition: all .2s ease-in-out;
+}
+.similarView:hover {
+  transform: scale(1.1);
+}
+.similarView__border {
+  border: #ddc884 1px solid;
+  min-width:120px;
+  padding: 15px;
+}
+.similarView__beerName {
+  color: #9B3200;
+}
