@@ -31,7 +31,7 @@ class DetailedView extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.match.params.id !== this.props.match.params.id) {
-            this.props.getDetailsApi(this.props.match.params.id);
+            this.props.getDetailsApi(nextProps.match.params.id);
         }
     }
 
