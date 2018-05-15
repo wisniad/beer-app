@@ -29,7 +29,8 @@ class ListingView extends React.Component {
 
     render() {
         let items = [];
-        (this.props.beers.data || []).map(
+        if(this.props.beers.data) {
+        ( this.props.beers.data ).map(
             (beer, i) => items.push(
                 <Box p={1} w={280} h={280} key={i} className="listingView" >
                     <Link to={"/beer/" + beer.id + "/" + beer.name}>
@@ -48,7 +49,7 @@ class ListingView extends React.Component {
                 </Box>
             )
         );
-
+        }
         return (
             <div>
 
@@ -82,25 +83,25 @@ class ListingView extends React.Component {
                             px={0}
                             py={0}>
                             {items}
+
+
                             {
-                                this.props.beers.error && <p>Check your internet.</p>
+                                this.props.beers.hasMoreItems === false &&
+                                <h2>That was it. No more beers to show.</h2>
+                            }
+                            {
+                                this.props.beers.error && <h2>Check your internet.</h2>
                             }
 
                             {
                                 this.props.beers.getting && <Box p={0} w={300} h={300}>
-                                    <p>Grabbing beers...</p>
+                                    <h2>Grabbing beers...</h2>
                                     <HashLoader
                                         color={'FF2F2F'}
                                     /></Box>
                             }
-
-                            {
-                                this.props.beers.hasMoreItems === false &&
-                                <p>That was it. No more beers to show.</p>
-                            }
                         </Flex>
                     </InfiniteScroll>
-
 
             </div>
         )
