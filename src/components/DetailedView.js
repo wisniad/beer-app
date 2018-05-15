@@ -5,6 +5,7 @@ import {history} from '../routers/AppRouter';
 import Modal from 'react-modal';
 import {HashLoader} from 'react-spinners';
 import SimilarBeers from './SimilarBeers';
+import {Flex, Box} from 'reflexbox'
 
 const customStyles = {
     content : {

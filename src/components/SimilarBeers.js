@@ -23,22 +23,19 @@ class SimilarBeers extends React.Component {
                             .slice(0, 3)
                             .map(
                                 (beer, i) => (
-                                    <Link key={i} to={"/beer/" + beer.id + "/" + beer.name}>
-                                        <div className="flipper">
-                                            <div className="front">
-                                                <img src={beer.image_url} width="10" height="37" alt=""/>
-                                                <h4>{beer.name}</h4>
-                                            </div>
-                                            <div className="back">
+
+
+                                            <div className="card">
+                                                <Link key={i} to={"/beer/" + beer.id + "/" + beer.name}>
+                                                    <img src={beer.image_url} width="25" height="66" alt=""/>
+                                                    <h2>{beer.name}</h2>
+                                                </Link>
+
                                                 <p><strong>IBU:</strong>{beer.ibu}</p>
                                                 <p><strong>ABV:</strong>{beer.abv}</p>
                                                 <p><strong>EBC:</strong>{beer.ebc}</p>
                                             </div>
-                                        </div>
-                                        <div>
 
-                                        </div>
-                                    </Link>
                                 )
                             )
                         : <HashLoader

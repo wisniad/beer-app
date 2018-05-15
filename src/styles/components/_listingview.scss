@@ -2,6 +2,7 @@
   background-color: white;
   border: #ddc884 1px solid;
   margin: 20px;
+  position: relative;
 }
 .listingView { transition: all .2s ease-in-out; }
 .listingView:hover { transform: scale(1.2);}
@@ -11,9 +12,12 @@
 }
 .listingView__beer_name {
   text-align: center;
+  padding-bottom: 10%;
 }
 
 .listingView__beerTagline {
   text-align: center;
   color: #D77200;
+  position: absolute;
+  bottom: 0;
 }

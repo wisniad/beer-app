@@ -73,7 +73,7 @@ export const getSimilarApi = (similarAbv, similarEbc, similarIbu) => dispatch =>
                 beersToFilter => {
                     return beersToFilter
                         .sort((a, b) => parseFloat(a.abv) - parseFloat(b.abv))
-                        .slice(0, 2);
+                        .slice(0, 4);
                 }
             ),
             fetch(
@@ -84,7 +84,7 @@ export const getSimilarApi = (similarAbv, similarEbc, similarIbu) => dispatch =>
                 beersToFilter => {
                     return beersToFilter
                         .sort((a, b) => parseFloat(a.abv) - parseFloat(b.abv))
-                        .slice(0, 2);
+                        .slice(0, 4);
                 }
             ),
             fetch(
@@ -95,7 +95,7 @@ export const getSimilarApi = (similarAbv, similarEbc, similarIbu) => dispatch =>
                 beersToFilter => {
                     return beersToFilter
                         .sort((a, b) => parseFloat(a.abv) - parseFloat(b.abv))
-                        .slice(0, 2);
+                        .slice(0, 4);
                 }
             ),
 
