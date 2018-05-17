@@ -30,28 +30,26 @@ class SimilarBeers extends React.Component {
 
                                     <Link key={i} to={"/beer/" + beer.id + "/" + beer.name}>
 
-                                        <Box p={0}  auto >
+                                        <Box p={0} auto>
                                             <div className="similarView__border similarView" align="center">
-                                            <img src={beer.image_url} className="detailedview__image" alt=""/>
-                                            <p className="detailedview__text similarView__beerName"><strong>{
-                                                beer.name.length > 20 ?
-                                                beer.name.substring(0, 15)+'...'
-                                                    : beer.name}</strong></p>
+                                                <img src={beer.image_url} className="detailedview__image" alt=""/>
+                                                <p className="detailedview__text similarView__beerName"><strong>{
+                                                    beer.name.length > 20 ?
+                                                        beer.name.substring(0, 15) + '...'
+                                                        : beer.name}</strong></p>
                                             </div>
                                         </Box>
                                     </Link>
 
-                    )
-                    )
-                    :
-                    <Box w={1 / 3} p={0}>
-                    <HashLoader
-                    color={'FF2F2F'}
-                    size={20}
-                    />
-                    </Box>
-
-
+                                )
+                            )
+                        :
+                        <Box w={1} p={0}>
+                            <HashLoader
+                                color={'FF2F2F'}
+                                size={40}
+                            />
+                        </Box>
                 }
             </Flex>
         )

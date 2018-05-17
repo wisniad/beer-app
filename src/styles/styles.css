@@ -8,7 +8,8 @@ body {
 h1 {
   font-size: 3rem;
   font-family: 'Luckiest Guy', cursive;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  letter-spacing: 1px; }
 
 h2 {
   font-size: 2rem;
@@ -74,7 +75,8 @@ h2 {
   font-size: 2rem; }
 
 .detailedview__copy_text {
-  font-size: 1rem; }
+  font-size: 1rem;
+  color: #D77200; }
 
 @media screen and (max-width: 550px) {
   .detailedview__main_beer {
@@ -102,3 +104,9 @@ h2 {
 
 .similarView__beerName {
   color: #9B3200; }
+
+.notfoundpage_link {
+  padding-left: 10px; }
+
+.notfoundpage__paddingTop {
+  padding-top: 25%; }

@@ -42,9 +42,6 @@ class DetailedView extends React.Component {
         return (
             <div>
                 <Modal open={this.state.modalIsOpen} onClose={this.closeModal} center>
-
-
-                    {/*<button onClick={this.closeModal}>close</button>*/}
                     {
                         !this.props.beers.getting ?
                             this.props.beers.beer !== null && this.props.beers.beerExists ?
@@ -55,21 +52,21 @@ class DetailedView extends React.Component {
                                                 {this.props.beers.beer[0].name}
                                                 <CopyToClipboard
                                                     text={window.location.href}
-                                                    onCopy={() =>  {
-                                                        this.setState({copied: true });
-                                                        setTimeout(function(){this.setState({copied: false})}.bind(this),3000) }
+                                                    onCopy={() => {
+                                                        this.setState({copied: true});
+                                                        setTimeout(function () {
+                                                            this.setState({copied: false})
+                                                        }.bind(this), 3000)
+                                                    }
                                                     }
                                                 >
                                                     <FaExternalLink className="detailedview__copy_link"/>
                                                 </CopyToClipboard>
-                                            </h1>
-                                            <h2 className="detailedview__main_tagline">{this.props.beers.beer[0].tagline}
                                                 {this.state.copied ?
                                                     <span className="detailedview__copy_link detailedview__copy_text"> Link to beer copied.</span> : null}
-                                            </h2>
+                                            </h1>
+                                            <h2 className="detailedview__main_tagline">{this.props.beers.beer[0].tagline}</h2>
                                         </Box>
-
-
                                         <Box w={1 / 3} p={0}>
                                             <div align="center">
                                                 <img src={this.props.beers.beer[0].image_url}
@@ -94,8 +91,6 @@ class DetailedView extends React.Component {
                                             <p className="detailedview__text"><strong>Brewers tips:</strong></p>
                                             <p className="detailedview__text">{this.props.beers.beer[0].brewers_tips}</p>
                                         </Box>
-
-
                                         <Box w={1} p={0}>
                                             <p className="detailedview__text"><strong>You may also like:</strong></p>
                                             <SimilarBeers
@@ -105,25 +100,6 @@ class DetailedView extends React.Component {
                                             />
                                         </Box>
                                     </Flex>
-                                    {/*<Box w={1} p={0}>*/}
-
-                                    {/*</Box>*/}
-
-
-                                    {/*<Box w={1/3} p={1}>*/}
-                                    {/*</Box>*/}
-                                    {/*<Box w={2/3} p={1}>*/}
-
-                                    {/*</Box>*/}
-
-                                    {/*<Box p={0} w={1} h={900}>*/}
-
-                                    {/*</Box>*/}
-
-
-                                    {/*</Flex>*/}
-
-
                                 </div>
                                 :
                                 this.props.beers.error ?
@@ -150,7 +126,6 @@ class DetailedView extends React.Component {
                                     />
                                 </Box>
                     }
-
                 </Modal>
             </div>
         )
