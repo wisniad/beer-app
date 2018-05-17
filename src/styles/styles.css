@@ -29,7 +29,6 @@ h2 {
 
 .listingView {
   background-color: white;
-  border: #ddc884 1px solid;
   margin: 20px;
   position: relative; }
 
@@ -77,10 +76,9 @@ h2 {
   .detailedview__text {
     font-size: 0.8rem; }
   .detailedview__image {
-    width: 40px;
-    height: 120px; }
+    width: 60px;
+    height: 140px; }
   .detailedview__borderImage {
-    border: #ddc884 1px solid;
     min-width: 120px;
     padding: 15px; } }
 
@@ -91,8 +89,7 @@ h2 {
   transform: scale(1.1); }
 
 .similarView__border {
-  border: #ddc884 1px solid;
-  min-width: 120px;
+  min-width: 70x;
   padding: 15px; }
 
 .similarView__beerName {

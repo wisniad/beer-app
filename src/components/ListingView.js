@@ -16,11 +16,14 @@ class ListingView extends React.Component {
     };
 
     componentDidMount() {
-        this.props.getBeersApi(this.state.page)
+        this.props.getBeersApi(this.props.beers.page, this.props.beers.data);
     }
 
 
     loadMore = () => {
+        console.log('Has more items:',this.props.beers.hasMoreItems)
+        console.log('Current page: ',this.state.page)
+        console.log('beers in props', this.props.beers.data)
         if (this.props.beers.hasMoreItems) {
             this.setState({page: this.state.page + 1});
             this.props.getBeersApi(this.props.beers.page, this.props.beers.data);
