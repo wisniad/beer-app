@@ -6,6 +6,8 @@ import Modal from 'react-responsive-modal';
 import {HashLoader} from 'react-spinners';
 import SimilarBeers from './SimilarBeers';
 import {Flex, Box} from 'reflexbox'
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import FaExternalLink from 'react-icons/lib/fa/external-link';
 
 class DetailedView extends React.Component {
     constructor() {
@@ -15,7 +17,8 @@ class DetailedView extends React.Component {
             modalIsOpen: true,
             getting: false,
             beer: null,
-            beerExists: false
+            beerExists: false,
+            copied: false
         };
         this.closeModal = this.closeModal.bind(this);
     }
@@ -48,15 +51,29 @@ class DetailedView extends React.Component {
                                 <div>
                                     <Flex wrap align='center' w={1} p={0}>
                                         <Box w={1} p={0}>
-                                            <h1 className="detailedview__main_beer"
-                                                key={this.props.beers.beer[0].id}>{this.props.beers.beer[0].name}</h1>
-                                            <h2 className="detailedview__main_tagline">{this.props.beers.beer[0].tagline}</h2>
+                                            <h1 className="detailedview__main_beer" key={this.props.beers.beer[0].id}>
+                                                {this.props.beers.beer[0].name}
+                                                <CopyToClipboard
+                                                    text={window.location.href}
+                                                    onCopy={() =>  {
+                                                        this.setState({copied: true });
+                                                        setTimeout(function(){this.setState({copied: false})}.bind(this),3000) }
+                                                    }
+                                                >
+                                                    <FaExternalLink className="detailedview__copy_link"/>
+                                                </CopyToClipboard>
+                                            </h1>
+                                            <h2 className="detailedview__main_tagline">{this.props.beers.beer[0].tagline}
+                                                {this.state.copied ?
+                                                    <span className="detailedview__copy_link detailedview__copy_text"> Link to beer copied.</span> : null}
+                                            </h2>
                                         </Box>
 
 
                                         <Box w={1 / 3} p={0}>
                                             <div align="center">
-                                                <img src={this.props.beers.beer[0].image_url} className="detailedview__image similarView__border" alt=""/>
+                                                <img src={this.props.beers.beer[0].image_url}
+                                                     className="detailedview__image similarView__border" alt=""/>
                                             </div>
                                         </Box>
                                         <Box w={2 / 3} p={0}>

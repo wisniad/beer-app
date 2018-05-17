@@ -68,6 +68,14 @@ h2 {
   color: #9B3200;
   text-decoration: none; }
 
+.detailedview__copy_link {
+  color: #3e3a9b;
+  padding-left: 10px;
+  font-size: 2rem; }
+
+.detailedview__copy_text {
+  font-size: 1rem; }
+
 @media screen and (max-width: 550px) {
   .detailedview__main_beer {
     font-size: 1.5rem; }
