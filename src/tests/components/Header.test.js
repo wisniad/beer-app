@@ -8,4 +8,4 @@ test('should render Header correctly', () => {
     renderer.render(<Header/>);
     expect(renderer.getRenderOutput()).toMatchSnapshot();
     // console.log(renderer.getRenderOutput());
-})
+});

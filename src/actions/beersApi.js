@@ -33,10 +33,10 @@ export const getBeersApi = (page, ownProps) => dispatch => {
             response => response.json()
         ).then(
             data => {
-                if(data.length > 0 ) {
+                if (data.length > 0) {
                     dispatch({type: GET_SUCCESS, data, newPage, ownProps})
                 }
-                else{
+                else {
                     dispatch({type: GET_SUCCESS_NO_MORE_ITEMS, data, newPage, ownProps})
                 }
             }
@@ -46,7 +46,6 @@ export const getBeersApi = (page, ownProps) => dispatch => {
     }
 
 };
-
 
 export const getDetailsApi = (beerId) => dispatch => {
     dispatch({type: GET_DETAILS_BEGIN});
@@ -59,8 +58,7 @@ export const getDetailsApi = (beerId) => dispatch => {
     ).catch(
         error => dispatch({type: GET_DETAILS_FAIL, error})
     )
-}
-
+};
 
 export const getSimilarApi = (similarAbv, similarEbc, similarIbu) => dispatch => {
     dispatch({type: GET_SIMILAR_BEGIN});
@@ -73,7 +71,7 @@ export const getSimilarApi = (similarAbv, similarEbc, similarIbu) => dispatch =>
                 beersToFilter => {
                     return beersToFilter
                         .sort((a, b) => parseFloat(a.abv) - parseFloat(b.abv))
-                        .slice(0, 2);
+                        .slice(0, 4);
                 }
             ),
             fetch(
@@ -84,7 +82,7 @@ export const getSimilarApi = (similarAbv, similarEbc, similarIbu) => dispatch =>
                 beersToFilter => {
                     return beersToFilter
                         .sort((a, b) => parseFloat(a.abv) - parseFloat(b.abv))
-                        .slice(0, 2);
+                        .slice(0, 4);
                 }
             ),
             fetch(
@@ -95,7 +93,7 @@ export const getSimilarApi = (similarAbv, similarEbc, similarIbu) => dispatch =>
                 beersToFilter => {
                     return beersToFilter
                         .sort((a, b) => parseFloat(a.abv) - parseFloat(b.abv))
-                        .slice(0, 2);
+                        .slice(0, 4);
                 }
             ),
 
@@ -106,7 +104,7 @@ export const getSimilarApi = (similarAbv, similarEbc, similarIbu) => dispatch =>
             .concat(values[2]);
     }).then(maybeDuplicates => {
         let seenIds = {};
-        maybeDuplicates = maybeDuplicates.filter(function(currentObject) {
+        maybeDuplicates = maybeDuplicates.filter(function (currentObject) {
             if (currentObject.id in seenIds) {
                 return false;
             } else {

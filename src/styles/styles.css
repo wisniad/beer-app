@@ -1,0 +1,112 @@
+html {
+  font-size: 85%; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #f1f1f1; }
+
+h1 {
+  font-size: 3rem;
+  font-family: 'Luckiest Guy', cursive;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+h2 {
+  font-size: 2rem;
+  font-family: 'Luckiest Guy', sans-serif;
+  letter-spacing: 1px; }
+
+.header {
+  background-color: #ff0000;
+  -webkit-box-shadow: 0px 3px 1px #b20000;
+  -moz-box-shadow: 0px 3px 1px #b20000;
+  box-shadow: 0px 3px 1px #b20000; }
+
+.header__tittle {
+  color: #FFE699; }
+
+.header__subtitle {
+  color: #ddc884; }
+
+.listingView {
+  background-color: white;
+  margin: 20px;
+  position: relative; }
+
+.listingView {
+  transition: all .2s ease-in-out; }
+
+.listingView:hover {
+  transform: scale(1.2); }
+
+.listingView a:visited, a:link {
+  color: #9B3200; }
+
+.listingView__beer_name {
+  text-align: center;
+  padding-bottom: 10%; }
+
+.listingView__beerTagline {
+  text-align: center;
+  color: #D77200;
+  position: absolute;
+  bottom: 0; }
+
+.detailedview__image {
+  width: 60px;
+  height: 140px; }
+
+.detailedview__main_beer {
+  color: #9B3200; }
+
+.detailedview__main_tagline {
+  color: #D77200; }
+
+.detailedview__text {
+  font-size: 1.2rem; }
+
+.listingView a:visited, a:link {
+  color: #9B3200;
+  text-decoration: none; }
+
+.detailedview__copy_link {
+  color: #3e3a9b;
+  padding-left: 10px;
+  font-size: 2rem; }
+
+.detailedview__copy_text {
+  font-size: 1rem;
+  color: #D77200; }
+
+@media screen and (max-width: 550px) {
+  .detailedview__main_beer {
+    font-size: 1.5rem; }
+  .detailedview__main_tagline {
+    font-size: 1rem; }
+  .detailedview__text {
+    font-size: 0.8rem; }
+  .detailedview__image {
+    width: 60px;
+    height: 140px; }
+  .detailedview__borderImage {
+    min-width: 120px;
+    padding: 15px; } }
+
+.similarView {
+  transition: all .2s ease-in-out; }
+
+.similarView:hover {
+  transform: scale(1.1); }
+
+.similarView__border {
+  min-width: 70x;
+  padding: 15px; }
+
+.similarView__beerName {
+  color: #9B3200; }
+
+.notfoundpage_link {
+  padding-left: 10px; }
+
+.notfoundpage__paddingTop {
+  padding-top: 25%; }

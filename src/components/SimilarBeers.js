@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {getSimilarApi} from '../actions/beersApi'
 import {Link} from 'react-router-dom';
 import {HashLoader} from 'react-spinners';
+import {Flex, Box} from 'reflexbox'
 
 class SimilarBeers extends React.Component {
 
@@ -16,27 +17,41 @@ class SimilarBeers extends React.Component {
 
     render() {
         return (
-            <div>
+            <Flex align='justify'
+                  justify='space-around'
+                  w={1} px={0} py={0}>
                 {
                     !this.props.similar.gettingSimilars && this.props.similar.similar !== null ?
                         this.props.similar.similar
                             .slice(0, 3)
                             .map(
                                 (beer, i) => (
+
+
                                     <Link key={i} to={"/beer/" + beer.id + "/" + beer.name}>
-                                        <div>
-                                            <img src={beer.image_url} width="10" height="37" alt=""/>
-                                            <h4>{beer.name}</h4>
-                                        </div>
+
+                                        <Box p={0} auto>
+                                            <div className="similarView__border similarView" align="center">
+                                                <img src={beer.image_url} className="detailedview__image" alt=""/>
+                                                <p className="detailedview__text similarView__beerName"><strong>{
+                                                    beer.name.length > 20 ?
+                                                        beer.name.substring(0, 15) + '...'
+                                                        : beer.name}</strong></p>
+                                            </div>
+                                        </Box>
                                     </Link>
+
                                 )
                             )
-                        : <HashLoader
-                            color={'FF2F2F'}
-                            size={20}
-                        />
+                        :
+                        <Box w={1} p={0}>
+                            <HashLoader
+                                color={'FF2F2F'}
+                                size={40}
+                            />
+                        </Box>
                 }
-            </div>
+            </Flex>
         )
     }
 }

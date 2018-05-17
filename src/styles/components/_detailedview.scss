@@ -1,0 +1,46 @@
+.detailedview__image {
+  width:60px;
+  height: 140px;
+}
+.detailedview__main_beer {
+  color: #9B3200;
+}
+.detailedview__main_tagline {
+  color: #D77200;
+}
+.detailedview__text {
+  font-size: 1.2rem;
+}
+.listingView a:visited, a:link {
+  color: #9B3200;
+  text-decoration: none;
+}
+.detailedview__copy_link {
+  color: #3e3a9b;
+  padding-left: 10px;
+  font-size: 2rem;
+}
+.detailedview__copy_text {
+  font-size: 1rem;
+  color: #D77200;
+}
+
+@media screen and (max-width: 550px) {
+  .detailedview__main_beer {
+    font-size: 1.5rem;
+  }
+  .detailedview__main_tagline {
+    font-size: 1rem;
+  }
+  .detailedview__text {
+    font-size: 0.8rem;
+  }
+  .detailedview__image {
+    width: 60px;
+    height: 140px;
+  }
+  .detailedview__borderImage {
+    min-width:120px;
+    padding: 15px;
+  }
+}
