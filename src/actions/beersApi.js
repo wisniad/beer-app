@@ -60,48 +60,63 @@ export const getDetailsApi = (beerId) => dispatch => {
     )
 };
 
+function shuffle(array) {
+    let m = array.length, t, i;
+
+    // While there remain elements to shuffle…
+    while (m) {
+
+        // Pick a remaining element…
+        i = Math.floor(Math.random() * m--);
+
+        // And swap it with the current element.
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+    }
+
+    return array;
+}
+
 export const getSimilarApi = (similarAbv, similarEbc, similarIbu) => dispatch => {
     dispatch({type: GET_SIMILAR_BEGIN});
     Promise.all([
             fetch(
-                `https://api.punkapi.com/v2/beers?abv_lt=${similarAbv}&page=1&per_page=10`
+                `https://api.punkapi.com/v2/beers?abv_lt=${similarAbv}&page=1&per_page=30`
             ).then(
                 response => response.json()
             ).then(
                 beersToFilter => {
-                    return beersToFilter
-                        .sort((a, b) => parseFloat(a.abv) - parseFloat(b.abv))
+                    return shuffle(beersToFilter)
                         .slice(0, 4);
                 }
             ),
             fetch(
-                `https://api.punkapi.com/v2/beers?ebc_lt=${similarEbc}&page=1&per_page=10`
+                `https://api.punkapi.com/v2/beers?ebc_lt=${similarEbc}&page=1&per_page=30`
             ).then(
                 response => response.json()
             ).then(
                 beersToFilter => {
-                    return beersToFilter
-                        .sort((a, b) => parseFloat(a.abv) - parseFloat(b.abv))
+                    return shuffle(beersToFilter)
                         .slice(0, 4);
                 }
             ),
             fetch(
-                `https://api.punkapi.com/v2/beers?ibu_lt=${similarIbu}&page=1&per_page=10`
+                `https://api.punkapi.com/v2/beers?ibu_lt=${similarIbu}&page=1&per_page=30`
             ).then(
                 response => response.json()
             ).then(
                 beersToFilter => {
-                    return beersToFilter
-                        .sort((a, b) => parseFloat(a.abv) - parseFloat(b.abv))
+                    return shuffle(beersToFilter)
                         .slice(0, 4);
                 }
             ),
 
         ]
     ).then(values => {
-        return values[0]
+        return shuffle(values[0]
             .concat(values[1])
-            .concat(values[2]);
+            .concat(values[2]));
     }).then(maybeDuplicates => {
         let seenIds = {};
         maybeDuplicates = maybeDuplicates.filter(function (currentObject) {
