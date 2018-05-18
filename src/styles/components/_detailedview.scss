@@ -5,9 +5,6 @@
 .detailedview__main_beer {
   color: #9B3200;
 }
-.detailedview__main_tagline {
-  color: #D77200;
-}
 .detailedview__text {
   font-size: 1.2rem;
 }
@@ -23,6 +20,23 @@
 .detailedview__copy_text {
   font-size: 1rem;
   color: #D77200;
+}
+.detailedview_height {
+  width: 100%;
+}
+.detailedview__staticHeight {
+  height: 250px;
+}
+.modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  padding: 250px;
+
+  .modal-content {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 550px) {

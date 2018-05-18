@@ -8,6 +8,8 @@ import SimilarBeers from './SimilarBeers';
 import {Flex, Box} from 'reflexbox'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import FaExternalLink from 'react-icons/lib/fa/external-link';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 class DetailedView extends React.Component {
     constructor() {
@@ -41,13 +43,15 @@ class DetailedView extends React.Component {
     render() {
         return (
             <div>
-                <Modal open={this.state.modalIsOpen} onClose={this.closeModal} center>
+                <Modal
+                    open={this.state.modalIsOpen} onClose={this.closeModal} center
+                >
                     {
                         !this.props.beers.getting ?
                             this.props.beers.beer !== null && this.props.beers.beerExists ?
-                                <div>
-                                    <Flex wrap align='center' w={1} p={0}>
-                                        <Box w={1} p={0}>
+                                <div className="modal-content">
+                                    <Grid container spacing={24} direction="column" align="left" >
+                                        <Grid item xs={12}>
                                             <h1 className="detailedview__main_beer" key={this.props.beers.beer[0].id}>
                                                 {this.props.beers.beer[0].name}
                                                 <CopyToClipboard
@@ -66,65 +70,74 @@ class DetailedView extends React.Component {
                                                     <span className="detailedview__copy_link detailedview__copy_text"> Link to beer copied.</span> : null}
                                             </h1>
                                             <h2 className="detailedview__main_tagline">{this.props.beers.beer[0].tagline}</h2>
-                                        </Box>
-                                        <Box w={1 / 3} p={0}>
-                                            <div align="center">
-                                                <img src={this.props.beers.beer[0].image_url}
-                                                     className="detailedview__image similarView__border" alt=""/>
-                                            </div>
-                                        </Box>
-                                        <Box w={2 / 3} p={0}>
-                                            <p className="detailedview__text"><strong>About this beer:</strong></p>
-                                            <p className="detailedview__text">{this.props.beers.beer[0].description}</p>
-                                        </Box>
-                                        <Box w={1 / 3} p={0}>
-                                            <div align="center">
-                                                <p className="detailedview__text">
-                                                    <strong>IBU:</strong> {this.props.beers.beer[0].ibu}</p>
-                                                <p className="detailedview__text">
-                                                    <strong> EBC:</strong> {this.props.beers.beer[0].ebc}</p>
-                                                <p className="detailedview__text">
-                                                    <strong> ABV:</strong> {this.props.beers.beer[0].abv}%</p>
-                                            </div>
-                                        </Box>
-                                        <Box w={2 / 3} p={0}>
-                                            <p className="detailedview__text"><strong>Brewers tips:</strong></p>
-                                            <p className="detailedview__text">{this.props.beers.beer[0].brewers_tips}</p>
-                                        </Box>
-                                        <Box w={1} p={0}>
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <Grid container spacing={24} direction="row" align="center" >
+                                                <Grid item xs={4}>
+                                                    <div align="center">
+                                                        <img src={this.props.beers.beer[0].image_url}
+                                                             className="detailedview__image similarView__border" alt=""/>
+                                                    </div>
+                                                </Grid>
+                                                <Grid item xs={8}>
+                                                    <p className="detailedview__text"><strong>About this beer:</strong></p>
+                                                    <p className="detailedview__text">{this.props.beers.beer[0].description}</p>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                        <Grid item xs={12}>
+                                            <Grid container spacing={24} direction="row" align="center" >
+                                                <Grid item xs={4}>
+                                                    <div align="center">
+                                                        <p className="detailedview__text">
+                                                            <strong>IBU:</strong> {this.props.beers.beer[0].ibu}</p>
+                                                        <p className="detailedview__text">
+                                                            <strong> EBC:</strong> {this.props.beers.beer[0].ebc}</p>
+                                                        <p className="detailedview__text">
+                                                            <strong> ABV:</strong> {this.props.beers.beer[0].abv}%</p>
+                                                    </div>
+                                                </Grid>
+                                                <Grid item xs={8}>
+                                                    <p className="detailedview__text"><strong>Brewers tips:</strong></p>
+                                                    <p className="detailedview__text">{this.props.beers.beer[0].brewers_tips}</p>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+
+                                        <Grid item xs={12} className="detailedview__staticHeight">
                                             <p className="detailedview__text"><strong>You may also like:</strong></p>
                                             <SimilarBeers
                                                 similarIbu={this.props.beers.beer[0].ibu}
                                                 similarEbc={this.props.beers.beer[0].ebc}
                                                 similarAbv={this.props.beers.beer[0].abv}
                                             />
-                                        </Box>
-                                    </Flex>
+                                        </Grid>
+                                    </Grid>
                                 </div>
                                 :
                                 this.props.beers.error ?
-                                    <Box w={1} p={3}>
+                                    <Grid item xs={12}>
                                         <p>Check your internet connection</p>
-                                    </Box>
-                                    : <Box w={1} p={3}>
+                                    </Grid>
+                                    : <Grid item xs={12}>
                                         <p>Couldn't grab a beer with ID: {this.props.match.params.id}. Request limit reached
                                             or beer doesn't exists.</p>
-                                    </Box>
+                                    </Grid>
                             :
                             this.props.match.params.beerName
-                                ? <Box w={1} p={3}>
+                                ? <Grid item xs={12}>
                                     <h1 className="detailedview__main_beer">{this.props.match.params.beerName}</h1>
                                     <h2>Grabbing information...</h2>
                                     <HashLoader
                                         color={'FF2F2F'}
                                     />
-                                </Box>
-                                : <Box w={1} p={3}>
+                                </Grid>
+                                : <Grid item xs={12}>
                                     <h2>Grabbing a beer...</h2>
                                     <HashLoader
                                         color={'FF2F2F'}
                                     />
-                                </Box>
+                                </Grid>
                     }
                 </Modal>
             </div>

@@ -4,6 +4,7 @@ import {getSimilarApi} from '../actions/beersApi'
 import {Link} from 'react-router-dom';
 import {HashLoader} from 'react-spinners';
 import {Flex, Box} from 'reflexbox'
+import Grid from '@material-ui/core/Grid';
 
 class SimilarBeers extends React.Component {
 
@@ -17,20 +18,16 @@ class SimilarBeers extends React.Component {
 
     render() {
         return (
-            <Flex align='justify'
-                  justify='space-around'
-                  w={1} px={0} py={0}>
+            <Grid container spacing={24} justify="space-around">
                 {
                     !this.props.similar.gettingSimilars && this.props.similar.similar !== null ?
                         this.props.similar.similar
                             .slice(0, 3)
                             .map(
                                 (beer, i) => (
-
-
                                     <Link key={i} to={"/beer/" + beer.id + "/" + beer.name}>
 
-                                        <Box p={0} auto>
+                                        <Grid item xs={12}>
                                             <div className="similarView__border similarView" align="center">
                                                 <img src={beer.image_url} className="detailedview__image" alt=""/>
                                                 <p className="detailedview__text similarView__beerName"><strong>{
@@ -38,20 +35,19 @@ class SimilarBeers extends React.Component {
                                                         beer.name.substring(0, 15) + '...'
                                                         : beer.name}</strong></p>
                                             </div>
-                                        </Box>
+                                        </Grid>
                                     </Link>
-
                                 )
                             )
                         :
-                        <Box w={1} p={0}>
+                        <Grid item xs={12}>
                             <HashLoader
                                 color={'FF2F2F'}
                                 size={40}
                             />
-                        </Box>
+                        </Grid>
                 }
-            </Flex>
+            </Grid>
         )
     }
 }

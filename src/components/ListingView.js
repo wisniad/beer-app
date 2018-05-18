@@ -6,6 +6,7 @@ import {HashLoader} from 'react-spinners';
 import InfiniteScroll from 'react-infinite-scroller';
 import {Header} from './Header';
 import {Flex, Box} from 'reflexbox'
+import Grid from '@material-ui/core/Grid';
 
 class ListingView extends React.Component {
 
@@ -32,26 +33,26 @@ class ListingView extends React.Component {
         if (this.props.beers.data) {
             (this.props.beers.data).map(
                 (beer, i) => items.push(
-                    <Box p={1} w={280} h={280} key={i} className="listingView">
+                    <Grid item xs={12} sm={6} md={4} lg={3} xl={2} align="center" justify="space-around">
                         <Link to={"/beer/" + beer.id + "/" + beer.name}>
-                            <Flex
-                                align='center'
-                                justify='center'
-                                column
-                                w={1}
-                                px={1}
-                                py={2}>
+                            <div className="listingView__beerSize listingView__beerBackground listingView" >
                                 <img src={beer.image_url} width="40" height="150" alt=""/>
-                                <h2 className="listingView__beer_name">{beer.name}</h2>
-                                <h3 className="listingView__beerTagline">{beer.tagline}</h3>
-                            </Flex>
+                                <h2 className="detailedview__main_beer">
+                                    {   beer.name.split(' ',2).join(' ')}
+                                        </h2>
+                                <h3 className="listingView__main_tagline">{   beer.tagline.split(' ',4).join(' ')}</h3>
+                            </div>
                         </Link>
-                    </Box>
+                    </Grid>
                 )
-            );
+            )
+            ;
         }
         return (
             <div>
+                <Header/>
+
+
                 <InfiniteScroll
                     pageStart={0}
                     hasMore={
@@ -59,45 +60,36 @@ class ListingView extends React.Component {
                         !this.props.beers.getting &&
                         this.props.beers.hasMoreItems
                     }
-                    loadMore={this.loadMore}
+                    // hasMore={false}
+                    loadMore={this.loadMore} className="listingView__centerByMargins"
                 >
-                    <Flex
-                        justify='center'
-                        w={1}
-                        className="header"
-                        mt={0}
-                        px={0}
-                        py={0}>
-                        <Box p={0}>
-                            <Header/>
-                        </Box>
-                    </Flex>
-                    <Flex
-                        justify='center'
-                        wrap
-                        w={1}
-                        style={{height: '100%'}}
-                        mt={0}
-                        px={0}
-                        py={0}>
-                        {items}
-                        {
-                            this.props.beers.hasMoreItems === false &&
-                            <h2>That was it. No more beers to show.</h2>
-                        }
-                        {
-                            this.props.beers.error && <h2>Check your internet.</h2>
-                        }
 
-                        {
-                            this.props.beers.getting && <Box p={0} w={300} h={300}>
-                                <h2>Grabbing beers...</h2>
-                                <HashLoader
-                                    color={'FF2F2F'}
-                                /></Box>
-                        }
-                    </Flex>
+                    <Grid container spacing={24} direction="row" justify="space-around">
+
+                        {items}
+                    </Grid>
+
+
+                    {
+                        this.props.beers.hasMoreItems === false &&
+                        <h2>That was it. No more beers to show.</h2>
+                    }
+                    {
+                        this.props.beers.error && <h2>Check your internet.</h2>
+                    }
+
+                    {
+                        this.props.beers.getting && <Grid item xs={12}>
+                            <h2>Grabbing beers...</h2>
+                            <HashLoader
+                                color={'FF2F2F'}
+                            /></Grid>
+                    }
+
+
                 </InfiniteScroll>
+
+
             </div>
         )
     }
