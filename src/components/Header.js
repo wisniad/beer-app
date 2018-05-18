@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 
 export const Header = () => (
-    <Grid container spacing={24} direction="column" align="center" className="header">
+    <Grid container direction="column" align="center" className="header">
         <Grid item xs={12}>
             <header>
                 <div>

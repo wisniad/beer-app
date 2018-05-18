@@ -1,23 +1,15 @@
 .listingView {
   position: relative;
+  transition: all .2s ease-in-out;
 }
-.listingView { transition: all .2s ease-in-out; }
 .listingView:hover { transform: scale(1.2);}
-
-//.listingView a:visited, a:link {
-//  color: #9B3200;
-//}
-
-.listingView__beer_name {
-  text-align: center;
-  //padding-bottom: 10%;
-}
 
 .listingView__main_tagline {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50% , -50%);
+  color: #D77200;
 }
 .listingView__beerBackground {
   background-color: #FFFFFF;
@@ -29,12 +21,16 @@
   padding: 15px;
   margin-top: 50px;
 }
-.listingView__beerSize:hover { transform: scale(1.2);}
-
 .listingView__centerByMargins {
   margin-left: 30px;
   margin-right: 30px;
 }
-.listingView__main_tagline {
-  color: #D77200;
+.listingView__padding_for_msg {
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 550px) {
+  .listingView__beerSize {
+    width: auto;
+  }
 }

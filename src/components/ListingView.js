@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 import {HashLoader} from 'react-spinners';
 import InfiniteScroll from 'react-infinite-scroller';
 import {Header} from './Header';
-import {Flex, Box} from 'reflexbox'
 import Grid from '@material-ui/core/Grid';
 
 class ListingView extends React.Component {
@@ -33,7 +32,7 @@ class ListingView extends React.Component {
         if (this.props.beers.data) {
             (this.props.beers.data).map(
                 (beer, i) => items.push(
-                    <Grid item xs={12} sm={6} md={4} lg={3} xl={2} align="center" justify="space-around">
+                    <Grid item xs={12} sm={6} md={4} lg={3} xl={2} align="center">
                         <Link to={"/beer/" + beer.id + "/" + beer.name}>
                             <div className="listingView__beerSize listingView__beerBackground listingView" >
                                 <img src={beer.image_url} width="40" height="150" alt=""/>
@@ -72,18 +71,19 @@ class ListingView extends React.Component {
 
                     {
                         this.props.beers.hasMoreItems === false &&
-                        <h2>That was it. No more beers to show.</h2>
+                        <Grid item xs={12} align="center" className="listingView__padding_for_msg" ><Grid item xs={12}><h2>That was it. No more beers to show.</h2></Grid></Grid>
                     }
                     {
-                        this.props.beers.error && <h2>Check your internet.</h2>
+                        this.props.beers.error && <Grid item xs={12} align="center" className="listingView__padding_for_msg" ><Grid item xs={12}><h2>Check your internet.</h2></Grid></Grid>
                     }
 
                     {
-                        this.props.beers.getting && <Grid item xs={12}>
+                        this.props.beers.getting && <Grid item xs={12} align="center" className="listingView__padding_for_msg"  >
+                            <Grid item xs={12}>
                             <h2>Grabbing beers...</h2>
                             <HashLoader
                                 color={'FF2F2F'}
-                            /></Grid>
+                            /></Grid></Grid>
                     }
 
 

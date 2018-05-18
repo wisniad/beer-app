@@ -1,6 +1,8 @@
 .detailedview__image {
-  width:60px;
   height: 140px;
+}
+.detailedview__image_main {
+  height: 170px;
 }
 .detailedview__main_beer {
   color: #9B3200;
@@ -21,27 +23,17 @@
   font-size: 1rem;
   color: #D77200;
 }
-.detailedview_height {
-  width: 100%;
-}
 .detailedview__staticHeight {
   height: 250px;
 }
-.modal-dialog {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) !important;
-  padding: 250px;
-
-  .modal-content {
-    width: 100%;
-  }
+.detailedview__simliarPadding {
+  padding-bottom: 15px;
 }
+
 
 @media screen and (max-width: 550px) {
   .detailedview__main_beer {
-    font-size: 1.5rem;
+    font-size: 1.5rem; //width: 60px;
   }
   .detailedview__main_tagline {
     font-size: 1rem;
@@ -50,11 +42,12 @@
     font-size: 0.8rem;
   }
   .detailedview__image {
-    width: 60px;
-    height: 140px;
+    height: 50px;
   }
-  .detailedview__borderImage {
-    min-width:120px;
-    padding: 15px;
+  .detailedview__image_main {
+    height: 80px;
+  }
+  .detailedview__staticHeight {
+    height: 120px;
   }
 }

@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {getSimilarApi} from '../actions/beersApi'
 import {Link} from 'react-router-dom';
 import {HashLoader} from 'react-spinners';
-import {Flex, Box} from 'reflexbox'
 import Grid from '@material-ui/core/Grid';
 
 class SimilarBeers extends React.Component {
@@ -26,15 +25,11 @@ class SimilarBeers extends React.Component {
                             .map(
                                 (beer, i) => (
                                     <Link key={i} to={"/beer/" + beer.id + "/" + beer.name}>
-
-                                        <Grid item xs={12}>
-                                            <div className="similarView__border similarView" align="center">
-                                                <img src={beer.image_url} className="detailedview__image" alt=""/>
-                                                <p className="detailedview__text similarView__beerName"><strong>{
-                                                    beer.name.length > 20 ?
-                                                        beer.name.substring(0, 15) + '...'
-                                                        : beer.name}</strong></p>
-                                            </div>
+                                        <Grid item xs={2} align="center" justify="center" className="similarView">
+                                            <img src={beer.image_url} className="detailedview__image" alt="Beer image"
+                                                 align="center"/>
+                                            <p className="detailedview__text similarView__beerName">
+                                                <strong>{beer.name.split(' ', 2).join(' ')}</strong></p>
                                         </Grid>
                                     </Link>
                                 )

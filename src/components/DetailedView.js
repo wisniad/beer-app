@@ -5,11 +5,10 @@ import {history} from '../routers/AppRouter';
 import Modal from 'react-responsive-modal';
 import {HashLoader} from 'react-spinners';
 import SimilarBeers from './SimilarBeers';
-import {Flex, Box} from 'reflexbox'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import FaExternalLink from 'react-icons/lib/fa/external-link';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
+import Header from './Header';
 
 class DetailedView extends React.Component {
     constructor() {
@@ -43,6 +42,7 @@ class DetailedView extends React.Component {
     render() {
         return (
             <div>
+                <Header/>
                 <Modal
                     open={this.state.modalIsOpen} onClose={this.closeModal} center
                 >
@@ -50,7 +50,7 @@ class DetailedView extends React.Component {
                         !this.props.beers.getting ?
                             this.props.beers.beer !== null && this.props.beers.beerExists ?
                                 <div className="modal-content">
-                                    <Grid container spacing={24} direction="column" align="left" >
+                                    <Grid container spacing={0} direction="column" align="left" >
                                         <Grid item xs={12}>
                                             <h1 className="detailedview__main_beer" key={this.props.beers.beer[0].id}>
                                                 {this.props.beers.beer[0].name}
@@ -76,19 +76,20 @@ class DetailedView extends React.Component {
                                                 <Grid item xs={4}>
                                                     <div align="center">
                                                         <img src={this.props.beers.beer[0].image_url}
-                                                             className="detailedview__image similarView__border" alt=""/>
+                                                             className="detailedview__image_main" alt=""/>
                                                     </div>
                                                 </Grid>
                                                 <Grid item xs={8}>
-                                                    <p className="detailedview__text"><strong>About this beer:</strong></p>
+                                                    <h2 className="detailedview__text"><strong>About this beer:</strong></h2>
                                                     <p className="detailedview__text">{this.props.beers.beer[0].description}</p>
                                                 </Grid>
                                             </Grid>
                                         </Grid>
                                         <Grid item xs={12}>
-                                            <Grid container spacing={24} direction="row" align="center" >
+                                            <Grid container spacing={0} direction="row" align="center" >
                                                 <Grid item xs={4}>
                                                     <div align="center">
+                                                        <h2 className="detailedview__text"><strong>Beer info:</strong></h2>
                                                         <p className="detailedview__text">
                                                             <strong>IBU:</strong> {this.props.beers.beer[0].ibu}</p>
                                                         <p className="detailedview__text">
@@ -98,14 +99,14 @@ class DetailedView extends React.Component {
                                                     </div>
                                                 </Grid>
                                                 <Grid item xs={8}>
-                                                    <p className="detailedview__text"><strong>Brewers tips:</strong></p>
+                                                    <h2 className="detailedview__text"><strong>Brewers tips:</strong></h2>
                                                     <p className="detailedview__text">{this.props.beers.beer[0].brewers_tips}</p>
                                                 </Grid>
                                             </Grid>
                                         </Grid>
 
                                         <Grid item xs={12} className="detailedview__staticHeight">
-                                            <p className="detailedview__text"><strong>You may also like:</strong></p>
+                                            <h2 className="detailedview__text detailedview__simliarPadding"><strong>You may also like:</strong></h2>
                                             <SimilarBeers
                                                 similarIbu={this.props.beers.beer[0].ibu}
                                                 similarEbc={this.props.beers.beer[0].ebc}
