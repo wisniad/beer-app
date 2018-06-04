@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<div>
+  <Unknown />
+  <GridWrapper
+    container={true}
+    spacing={24}
+  >
+    <GridWrapper
+      align="center"
+      item={true}
+      xs={12}
+    >
+      <h2
+        className="notfoundpage__paddingTop"
+      >
+        404 Not found page
+      </h2>
+      <h2>
+        <Link
+          className="notfoundpage_link"
+          replace={false}
+          to="/"
+        >
+          Go to main page
+        </Link>
+      </h2>
+    </GridWrapper>
+  </GridWrapper>
+</div>
+`;

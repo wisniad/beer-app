@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d8d12e4-e7c6-4ef7-a084-422bcbfb38f0" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/tests/components/DetailedView.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/components/_listingview.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/_listingview.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/components/__snapshots__/Header.test.js.snap" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,83 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SimilarBeers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/SimilarBeers.js">
+      <file leaf-file-name="DetailedView.test.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tests/components/DetailedView.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beersApi.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/beersApi.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="99" column="49" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListingView.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/ListingView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_listingview.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/components/_listingview.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_similarbeers.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/components/_similarbeers.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailedView.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/DetailedView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NotFoundPage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/NotFoundPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="170">
+              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -179,6 +107,8 @@
         <option value="$PROJECT_DIR$/src/actions/beersApi.js" />
         <option value="$PROJECT_DIR$/src/styles/components/_listingview.scss" />
         <option value="$PROJECT_DIR$/src/components/ListingView.js" />
+        <option value="$PROJECT_DIR$/src/tests/components/DetailedView.js" />
+        <option value="$PROJECT_DIR$/src/tests/components/DetailedView.test.js" />
       </list>
     </option>
   </component>
@@ -193,10 +123,15 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="262" />
-    <option name="y" value="32" />
-    <option name="width" value="1378" />
+    <option name="x" value="248" />
+    <option name="y" value="7" />
+    <option name="width" value="1379" />
     <option name="height" value="1020" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -210,44 +145,31 @@
         <subPane>
           <expand>
             <path>
-              <item name="beerapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="beerapp" type="462c0819:PsiDirectoryNode" />
+              <item name="beer-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="beer-app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="beerapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="beerapp" type="462c0819:PsiDirectoryNode" />
+              <item name="beer-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="beer-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="beerapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="beerapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="beerapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="beerapp" type="462c0819:PsiDirectoryNode" />
+              <item name="beer-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="beer-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="beerapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="beerapp" type="462c0819:PsiDirectoryNode" />
+              <item name="beer-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="beer-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="beerapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="beerapp" type="462c0819:PsiDirectoryNode" />
+              <item name="beer-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="beer-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="beerapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="beerapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -264,6 +186,11 @@
     <property name="node.js.selected.package.prettier" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wisni\WebstormProjects\beer-app\src\tests\components" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -299,6 +226,7 @@
       <workItem from="1526549469600" duration="9553000" />
       <workItem from="1526655537872" duration="8443000" />
       <workItem from="1526731029341" duration="786000" />
+      <workItem from="1528103892663" duration="1021000" />
     </task>
     <task id="LOCAL-00001" summary="- Get beers from API and save page from which beers are received">
       <created>1525767794813</created>
@@ -458,32 +386,32 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139196000" />
+    <option name="totallyTimeSpent" value="140217000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="262" y="32" width="1378" height="1020" extended-state="0" />
+    <frame x="199" y="6" width="1103" height="816" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22568941" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22497705" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50080514" side_tool="true" weight="0.15189873" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49919486" visible="true" weight="0.16666667" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49919486" visible="true" weight="0.36130866" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="9" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32911393" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Messages" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,20 +457,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/NotFoundPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routers/AppRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js" />
     <entry file="file://$PROJECT_DIR$/src/components/ListingView.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -617,41 +531,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-235" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/scripts/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="76" column="4" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/package.json" />
+    <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/scripts/test.js" />
     <entry file="file://$PROJECT_DIR$/yarn.lock" />
     <entry file="file://$PROJECT_DIR$/src/App.test.js" />
     <entry file="file://$PROJECT_DIR$/src/components/ListOfBeers.js" />
     <entry file="file://$PROJECT_DIR$/src/App.js" />
     <entry file="file://$PROJECT_DIR$/src/tests/routers/AppRouter.test.js" />
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/reducers/beerReducer.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/components/Header.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="30" selection-start-line="2" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -693,13 +583,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="292" column="8" selection-start-line="292" selection-start-column="8" selection-end-line="292" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts" />
     <entry file="file://$PROJECT_DIR$/src/components/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -735,9 +619,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/components/_listingview.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/components/__snapshots__/Header.test.js.snap">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/beersApi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="99" column="49" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SimilarBeers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ListingView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/components/Header.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/components/_similarbeers.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="119">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
@@ -749,9 +680,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/NotFoundPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/DetailedView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="595">
           <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
@@ -759,46 +700,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/NotFoundPage.js">
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/components/DetailedView.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="170">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SimilarBeers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/beersApi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="99" column="49" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/components/_listingview.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ListingView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
